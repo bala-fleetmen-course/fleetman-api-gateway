@@ -11,13 +11,15 @@ pipeline {
    }
 
    stages {
+       stage('Change Dir') {
+         steps {
+            sh '''cd C:/CI-CD'''
+         }
+      }
+
       stage('Preparation') {
          steps {
             cleanWs()
-            sh """
-             ls
-             cd C:/CI-CD
-             """
             git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
          }
       }
