@@ -15,7 +15,7 @@ pipeline {
          steps {
             cleanWs()
             sh '''
-             cd C:\CI-CD
+             cd C:/CI-CD
              '''
             git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
          }
