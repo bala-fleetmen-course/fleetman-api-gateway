@@ -14,9 +14,10 @@ pipeline {
       stage('Preparation') {
          steps {
             cleanWs()
-            sh '''
+            sh """
+             ls
              cd C:/CI-CD
-             '''
+             """
             git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
          }
       }
