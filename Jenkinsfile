@@ -11,12 +11,7 @@ pipeline {
    }
 
    stages {
-       stage('Change Dir') {
-         steps {
-            sh '''cd C:/CI-CD'''
-         }
-      }
-
+       
       stage('Preparation') {
          steps {
             cleanWs()
